@@ -1,0 +1,19 @@
+{
+  "name": "villagedungeons:village/plains/tavern_cellar",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagedungeons:village/houses/tavern_1_cellar",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+
+  ]
+}

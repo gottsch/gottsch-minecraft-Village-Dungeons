@@ -1,0 +1,18 @@
+{
+  "name": "villagedungeons:village/plains/dungeons",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagedungeons:village/houses/plains_small_house_offset_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 10
+    }
+  ]
+}
