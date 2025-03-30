@@ -125,7 +125,7 @@ repositories {
 dependencies {
      minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("curse.maven:gottschcore-272450:5852444")
-    implementation fg.deobf("curse.maven:jade-324717:5339264")
+//    implementation fg.deobf("curse.maven:jade-324717:5339264")
 
  }
 

@@ -18,6 +18,7 @@
 package mod.gottsch.forge.villagedungeons.datagen;
 
 import mod.gottsch.forge.villagedungeons.core.VillageDungeons;
+import mod.gottsch.forge.villagedungeons.core.block.ModBlocks;
 import mod.gottsch.forge.villagedungeons.core.util.LangUtil;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -40,7 +41,7 @@ public class LanguageGen extends LanguageProvider {
 //        add(ModItems.PLAYER_DEED.get(), "Player Deed");
 
         // blocks
-//        add(ModBlocks.PLAYER_FOUNDATION_STONE.get(), "Foundation Stone");
+        add(ModBlocks.WEATHERED_COPPER_GRATE.get(), "Weathered Copper Grate");
 
         /*
          * Util.chats

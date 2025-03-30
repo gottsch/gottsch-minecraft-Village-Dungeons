@@ -1,0 +1,17 @@
+{
+  "name": "villagedungeons:sewer/main_entrances",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagedungeons:sewer/main_entrance",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}

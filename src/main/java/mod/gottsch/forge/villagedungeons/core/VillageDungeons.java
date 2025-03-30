@@ -17,7 +17,14 @@
  */
 package mod.gottsch.forge.villagedungeons.core;
 
+import mod.gottsch.forge.villagedungeons.core.block.ModBlocks;
+import mod.gottsch.forge.villagedungeons.core.config.Config;
+import mod.gottsch.forge.villagedungeons.core.item.ModItems;
+import mod.gottsch.forge.villagedungeons.core.setup.CommonSetup;
+import mod.gottsch.forge.villagedungeons.core.setup.Registration;
+import mod.gottsch.forge.villagedungeons.core.world.levelgen.structure.templatesystem.ModStructureProcessors;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 /**
  * @author Mark Gottschling on 3/24/2025
@@ -26,8 +33,13 @@ import net.minecraftforge.fml.common.Mod;
 public class VillageDungeons {
     public static final String MOD_ID = "villagedungeons";
 
-    public VillageDungeons() {
+    public VillageDungeons(FMLJavaModLoadingContext context) {
+        Config.register();
 
+        ModBlocks.register(context.getModEventBus());
+        ModItems.register(context.getModEventBus());
+
+        ModStructureProcessors.register(context.getModEventBus());
     }
 
 }

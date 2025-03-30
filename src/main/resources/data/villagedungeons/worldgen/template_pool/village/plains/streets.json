@@ -1,0 +1,17 @@
+{
+  "name": "villagedungeons:village/plains/streets",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "villagedungeons:village/streets/straight_mid",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}
