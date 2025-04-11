@@ -1,0 +1,16 @@
+{
+  "name": "villagedungeons:village/plains/taverns/small_testers",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:village/taverns/small_tester",
+        "processors": [
+        ],
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "processors": [
     {
-      "processor_type": "villagedungeons:dungeons_air"
+      "processor_type": "villagedungeons:dungeon_air"
     }
   ]
 }

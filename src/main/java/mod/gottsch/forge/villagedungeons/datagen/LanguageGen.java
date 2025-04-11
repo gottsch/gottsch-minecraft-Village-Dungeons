@@ -42,6 +42,7 @@ public class LanguageGen extends LanguageProvider {
 
         // blocks
         add(ModBlocks.WEATHERED_COPPER_GRATE.get(), "Weathered Copper Grate");
+        add(ModBlocks.WEATHERED_COPPER_TRAPDOOR.get(), "Weathered Copper Trap Door");
 
         /*
          * Util.chats

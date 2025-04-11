@@ -25,12 +25,17 @@ import mod.gottsch.forge.villagedungeons.core.setup.Registration;
 import mod.gottsch.forge.villagedungeons.core.world.levelgen.structure.templatesystem.ModStructureProcessors;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author Mark Gottschling on 3/24/2025
  */
 @Mod(VillageDungeons.MOD_ID)
 public class VillageDungeons {
+    // logger
+    public static Logger LOGGER = LogManager.getLogger(VillageDungeons.MOD_ID);
+
     public static final String MOD_ID = "villagedungeons";
 
     public VillageDungeons(FMLJavaModLoadingContext context) {

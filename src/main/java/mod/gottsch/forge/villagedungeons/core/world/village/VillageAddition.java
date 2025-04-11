@@ -18,10 +18,16 @@ import java.util.List;
 import com.mojang.datafixers.util.Pair;
 import net.minecraftforge.event.server.ServerAboutToStartEvent;
 
+/**
+ * @author Mark Gottschling on 3/24/2025
+ */
 @Mod.EventBusSubscriber(modid = VillageDungeons.MOD_ID)
 public class VillageAddition {
     private static final ResourceKey<StructureProcessorList> EMPTY_PROCESSOR_LIST_KEY = ResourceKey.create(
             Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath("minecraft", "empty"));
+
+//    private static final ResourceKey<StructureProcessorList> DUNGEON_AIR_PROCESSOR_LIST_KEY = ResourceKey.create(
+//            Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath("villagedungeons", "dungeon_air"));
 
     /**
      * Adds the building to the targeted pool.
@@ -39,6 +45,7 @@ public class VillageAddition {
         // This is a requirement as using the ProcessorLists.EMPTY field will cause the game to throw errors.
         // The reason why is the empty processor list in the world's registry is not the same instance as in that field once the world is started up.
         Holder<StructureProcessorList> emptyProcessorList = processorListRegistry.getHolderOrThrow(EMPTY_PROCESSOR_LIST_KEY);
+//        Holder<StructureProcessorList> dungeonProcessorList = processorListRegistry.getHolderOrThrow(DUNGEON_AIR_PROCESSOR_LIST_KEY);
 
         // Grab the pool we want to add to
         StructureTemplatePool pool = templatePoolRegistry.get(poolRL);
@@ -46,7 +53,7 @@ public class VillageAddition {
 
         // Grabs the nbt piece and creates a SinglePoolElement of it that we can add to a structure's pool.
         // Use .legacy( for villages/outposts and .single( for everything else
-        SinglePoolElement piece = SinglePoolElement.legacy(nbtPieceRL,
+        SinglePoolElement piece = SinglePoolElement.single(nbtPieceRL, // NOTE changed to .single
                 emptyProcessorList).apply(StructureTemplatePool.Projection.RIGID);
 
         // Use AccessTransformer or Accessor Mixin to make StructureTemplatePool's templates field public for us to see.
@@ -73,41 +80,18 @@ public class VillageAddition {
         Registry<StructureTemplatePool> templatePoolRegistry = event.getServer().registryAccess().registry(Registries.TEMPLATE_POOL).orElseThrow();
         Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
 
-        // Adds our piece to all village houses pool
-        // Note, the resourcelocation is getting the pool files from the data folder. Not assets folder.
-//        addBuildingToPool(templatePoolRegistry, processorListRegistry,
-//                ResourceLocation.parse("minecraft:village/plains/houses"),
-//                "villagedungeons:village/houses/tavern_1", 1500);
-
-//        addBuildingToPool(templatePoolRegistry, processorListRegistry,
-//                ResourceLocation.parse("minecraft:village/plains/houses"),
-//                "villagedungeons:village/houses/plains_small_house_1", 150);
-
-//        addBuildingToPool(templatePoolRegistry, processorListRegistry,
-//                ResourceLocation.parse("minecraft:village/plains/houses"),
-//                "villagedungeons:village/houses/plains_small_house_2", 1500);
-//
-//        addBuildingToPool(templatePoolRegistry, processorListRegistry,
-//                ResourceLocation.parse("minecraft:village/plains/houses"),
-//                "villagedungeons:village/houses/plains_small_house_3", 1500);
-
-        // add the dungeon starter street - it only links to dungeon starter houses
-        // ie taverns, churches, etc.
-//        addBuildingToPool(templatePoolRegistry, processorListRegistry,
-//                ResourceLocation.parse("minecraft:village/plains/streets"),
-//                "villagedungeons:village/streets/straight_tavern", 100);
-
+        // add the tavern starter street - it only links to tavern starter houses
         addBuildingToPool(templatePoolRegistry, processorListRegistry,
                 ResourceLocation.parse("minecraft:village/plains/streets"),
-                "villagedungeons:village/streets/tavern_1_full", 150);
+                "villagedungeons:village/plains/streets/plains_large_tavern_street", 5);
 
         //addBuildingToPool(templatePoolRegistry, processorListRegistry,
         //        new ResourceLocation("minecraft:village/snowy/houses"),
         //        "modid:structure_nbt_resourcelocation", 5);
-        //
-        //addBuildingToPool(templatePoolRegistry, processorListRegistry,
-        //        new ResourceLocation("minecraft:village/savanna/houses"),
-        //        "modid:structure_nbt_resourcelocation", 5);
+
+//        addBuildingToPool(templatePoolRegistry, processorListRegistry,
+//                ResourceLocation.parse("minecraft:village/savanna/houses"),
+//                "villagedungeons:village/streets/large_tavern_street", 5);
         //
         //addBuildingToPool(templatePoolRegistry, processorListRegistry,
         //        new ResourceLocation("minecraft:village/taiga/houses"),

@@ -1,0 +1,18 @@
+{
+  "comment": "this file is unnecessary as a target_pool as nothing with target it. the street is injected via code.",
+  "name": "villagedungeons:village/plains_large_tavern_streets",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:village/plains/streets/plains_large_tavern_street",
+        "processors": [
+        ],
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}

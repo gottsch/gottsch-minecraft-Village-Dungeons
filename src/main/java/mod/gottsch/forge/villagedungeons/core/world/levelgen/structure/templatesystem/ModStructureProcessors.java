@@ -10,6 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 /**
  * @author by Mark Gottschling on 3/29/2025
  */
+@Deprecated
 public class ModStructureProcessors {
     public static final DeferredRegister<StructureProcessorType<?>> STRUCTURE_PROCESSORS = DeferredRegister.create(Registries.STRUCTURE_PROCESSOR, VillageDungeons.MOD_ID);
 

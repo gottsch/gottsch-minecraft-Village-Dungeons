@@ -21,7 +21,7 @@ public class CommonSetup {
     public static void registerItemsToTab(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.WEATHERED_COPPER_GRATE.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-
+            event.accept(ModItems.WEATHERED_COPPER_TRAPDOOR.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 }

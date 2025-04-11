@@ -1,0 +1,15 @@
+{
+  "name": "villagedungeons:sewer/level1/tunnel/large/terminator/terminators",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level1/tunnel/large/terminator/large_terminator_1",
+        "processors": "villagedungeons:sewer/level1/all_sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}

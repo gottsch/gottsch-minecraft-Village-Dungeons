@@ -16,6 +16,7 @@ import java.util.function.Supplier;
 public class ModItems {
 
     public static final RegistryObject<Item> WEATHERED_COPPER_GRATE = fromBlock(ModBlocks.WEATHERED_COPPER_GRATE, Item.Properties::new);
+    public static final RegistryObject<Item> WEATHERED_COPPER_TRAPDOOR = fromBlock(ModBlocks.WEATHERED_COPPER_TRAPDOOR, Item.Properties::new);
 
     // convenience method: take a RegistryObject<Block> and make a corresponding RegistryObject<Item> from it
     public static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block, Supplier<Item.Properties> itemProperties) {

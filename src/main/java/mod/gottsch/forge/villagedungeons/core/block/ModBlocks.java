@@ -1,9 +1,11 @@
 package mod.gottsch.forge.villagedungeons.core.block;
 
 import mod.gottsch.forge.villagedungeons.core.setup.Registration;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
@@ -15,12 +17,8 @@ import java.util.function.Supplier;
  */
 public class ModBlocks {
 
-
-    public static final Supplier<BlockBehaviour.Properties> COPPER_PROPS = () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.0F, 5.0F);
-    public static final Supplier<BlockBehaviour.Properties> DEEPSLATE_ORE_PROPS = () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(3.0F, 6.0F);
-
     // copper blocks
-    public static final RegistryObject<WeatheringCopperGrateBlock> WEATHERED_COPPER_GRATE =
+    public static final RegistryObject<Block> WEATHERED_COPPER_GRATE =
             Registration.BLOCKS.register(
             "weathered_copper_grate", () ->
                             new WeatheringCopperGrateBlock(WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.of()
@@ -34,6 +32,11 @@ public class ModBlocks {
                     .isSuffocating((a, b, c) ->false)
                     .isViewBlocking((a, b, c) -> false)));
 
+    public static final RegistryObject<Block> WEATHERED_COPPER_TRAPDOOR = Registration.BLOCKS.register(
+            "weathered_copper_trapdoor",() ->
+            new WeatheringCopperTrapDoorBlock(
+                    BlockSetType.OAK, WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.copy(WEATHERED_COPPER_GRATE.get()))
+    );
 
     public static void register(IEventBus bus) {
         Registration.BLOCKS.register(bus);

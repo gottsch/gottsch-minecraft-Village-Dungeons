@@ -1,0 +1,17 @@
+{
+  "name": "villagedungeons:village/plains/taverns/plains_large_tavern_1",
+  "fallback": "minecraft:village/plains/terminators",
+  "elements": [
+
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:village/plains/taverns/plains_large_tavern_1_with_cellar",
+        "processors": [
+        ],
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}

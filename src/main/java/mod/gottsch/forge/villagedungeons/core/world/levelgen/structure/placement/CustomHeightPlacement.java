@@ -16,6 +16,7 @@ import java.util.Optional;
 /**
  * @author by Mark Gottschling on 3/28/2025
  */
+@Deprecated
 public class CustomHeightPlacement extends StructurePlacement {
 
     public static final Codec<CustomHeightPlacement> CODEC = RecordCodecBuilder.create(instance ->
