@@ -14,33 +14,22 @@ import net.minecraft.world.level.block.state.BlockState;
  * @author by Mark Gottschling on 3/29/2025
  */
 public class WeatheringCopperGrateBlock extends WaterloggedTransparentBlock implements WeatheringCopper {
-//    public static final MapCodec<WeatheringCopperGrateBlock> CODEC = RecordCodecBuilder.mapCodec(
-//            p_313130_ -> p_313130_.group(
-//                            WeatheringCopper.WeatherState.CODEC.fieldOf("weathering_state").forGetter(WeatheringCopperGrateBlock::getAge), propertiesCodec()
-//                    )
-//                    .apply(p_313130_, WeatheringCopperGrateBlock::new)
-//    );
 
     private final WeatheringCopper.WeatherState weatherState;
 
-//    @Override
-//    protected MapCodec<WeatheringCopperGrateBlock> codec() {
-//        return CODEC;
-//    }
-
-    public WeatheringCopperGrateBlock(WeatheringCopper.WeatherState p_311827_, BlockBehaviour.Properties p_311858_) {
-        super(p_311858_);
-        this.weatherState = p_311827_;
+    public WeatheringCopperGrateBlock(WeatheringCopper.WeatherState weatherState, BlockBehaviour.Properties properties) {
+        super(properties);
+        this.weatherState = weatherState;
     }
 
     @Override
-    public void randomTick(BlockState p_309962_, ServerLevel p_309911_, BlockPos p_311585_, RandomSource p_310772_) {
-//        this.changeOverTime(p_309962_, p_309911_, p_311585_, p_310772_);
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource randomSource) {
+        this.onRandomTick(state, level, pos, randomSource);
     }
 
     @Override
-    public boolean isRandomlyTicking(BlockState p_310531_) {
-        return false;
+    public boolean isRandomlyTicking(BlockState state) {
+        return WeatheringCopper.getNext(state.getBlock()).isPresent();
     }
 
     public WeatheringCopper.WeatherState getAge() {

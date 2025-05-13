@@ -41,8 +41,8 @@ public class LanguageGen extends LanguageProvider {
 //        add(ModItems.PLAYER_DEED.get(), "Player Deed");
 
         // blocks
-        add(ModBlocks.WEATHERED_COPPER_GRATE.get(), "Weathered Copper Grate");
-        add(ModBlocks.WEATHERED_COPPER_TRAPDOOR.get(), "Weathered Copper Trap Door");
+//        add(ModBlocks.WEATHERED_COPPER_GRATE.get(), "Weathered Copper Grate");
+//        add(ModBlocks.WEATHERED_COPPER_TRAPDOOR.get(), "Weathered Copper Trap Door");
 
         /*
          * Util.chats

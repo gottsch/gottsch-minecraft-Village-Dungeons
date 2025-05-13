@@ -1,0 +1,15 @@
+{
+  "name": "villagedungeons:sewer/rooms_x",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/rooms/room_1",
+        "processors": "villagedungeons:sewers",
+        "projection": "rigid"
+      },
+      "weight": 5
+    }
+  ]
+}

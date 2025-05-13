@@ -21,44 +21,37 @@ import net.minecraft.world.level.material.Fluids;
  * @author by Mark Gottschling on 3/29/2025
  */
 public class WaterloggedTransparentBlock extends TransparentBlock implements SimpleWaterloggedBlock {
-//    public static final MapCodec<WaterloggedTransparentBlock> CODEC = simpleCodec(WaterloggedTransparentBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-//    @Override
-//    protected MapCodec<? extends WaterloggedTransparentBlock> codec() {
-//        return CODEC;
-//    }
-
-    public WaterloggedTransparentBlock(BlockBehaviour.Properties p_312891_) {
-        super(p_312891_);
+    public WaterloggedTransparentBlock(BlockBehaviour.Properties properties) {
+        super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockPlaceContext p_311201_) {
-        FluidState fluidstate = p_311201_.getLevel().getFluidState(p_311201_.getClickedPos());
-        return super.getStateForPlacement(p_311201_).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.is(Fluids.WATER)));
+    public BlockState getStateForPlacement(BlockPlaceContext placeContext) {
+        FluidState fluidstate = placeContext.getLevel().getFluidState(placeContext.getClickedPos());
+        return super.getStateForPlacement(placeContext).setValue(WATERLOGGED, Boolean.valueOf(fluidstate.is(Fluids.WATER)));
     }
 
     @Override
     public BlockState updateShape(
-            BlockState p_312220_, Direction p_310752_, BlockState p_310063_, LevelAccessor p_311410_, BlockPos p_310038_, BlockPos p_309617_
-    ) {
-        if (p_312220_.getValue(WATERLOGGED)) {
-            p_311410_.scheduleTick(p_310038_, Fluids.WATER, Fluids.WATER.getTickDelay(p_311410_));
+            BlockState state, Direction direction, BlockState state1, LevelAccessor levelAccessor, BlockPos pos, BlockPos pos1) {
+        if (state.getValue(WATERLOGGED)) {
+            levelAccessor.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(levelAccessor));
         }
 
-        return super.updateShape(p_312220_, p_310752_, p_310063_, p_311410_, p_310038_, p_309617_);
+        return super.updateShape(state, direction, state1, levelAccessor, pos, pos1);
     }
 
     @Override
-    public FluidState getFluidState(BlockState p_312084_) {
-        return p_312084_.getValue(WATERLOGGED) ? Fluids.WATER.getSource(true) : super.getFluidState(p_312084_);
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(true) : super.getFluidState(state);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_311516_) {
-        p_311516_.add(WATERLOGGED);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
+        stateBuilder.add(WATERLOGGED);
     }
 }

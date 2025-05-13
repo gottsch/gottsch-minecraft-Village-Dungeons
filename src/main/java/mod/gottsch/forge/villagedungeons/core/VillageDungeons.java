@@ -41,6 +41,8 @@ public class VillageDungeons {
     public VillageDungeons(FMLJavaModLoadingContext context) {
         Config.register();
 
+        // register the deferred registries
+        Registration.init(); // TODO ModEntities?
         ModBlocks.register(context.getModEventBus());
         ModItems.register(context.getModEventBus());
 

@@ -15,6 +15,15 @@
     {
       "element": {
         "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level1/tunnel/large/large_tunnel_2",
+        "processors": "villagedungeons:sewer/level1/all_sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
         "location": "villagedungeons:sewer/level1/tunnel/large/junction/large_junction_1",
         "processors": "villagedungeons:sewer/level1/all_sewers",
         "projection": "rigid"
@@ -25,6 +34,24 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "villagedungeons:sewer/level1/tunnel/large/junction/large_junction_2",
+        "processors": "villagedungeons:sewer/level1/all_sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level1/tunnel/large/junction/large_junction_3",
+        "processors": "villagedungeons:sewer/level1/all_sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level1/tunnel/large/adapter/adapter_t2l_1",
         "processors": "villagedungeons:sewer/level1/all_sewers",
         "projection": "rigid"
       },

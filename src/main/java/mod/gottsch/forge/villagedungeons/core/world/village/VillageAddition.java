@@ -23,6 +23,9 @@ import net.minecraftforge.event.server.ServerAboutToStartEvent;
  */
 @Mod.EventBusSubscriber(modid = VillageDungeons.MOD_ID)
 public class VillageAddition {
+    // TODO make a registry of inject pools, so modded villages could be injected into as well
+    private static final String VANILLA_PLAINS_STREETS_POOL = "minecraft:village/plains/streets";
+
     private static final ResourceKey<StructureProcessorList> EMPTY_PROCESSOR_LIST_KEY = ResourceKey.create(
             Registries.PROCESSOR_LIST, ResourceLocation.fromNamespaceAndPath("minecraft", "empty"));
 
@@ -82,7 +85,7 @@ public class VillageAddition {
 
         // add the tavern starter street - it only links to tavern starter houses
         addBuildingToPool(templatePoolRegistry, processorListRegistry,
-                ResourceLocation.parse("minecraft:village/plains/streets"),
+                ResourceLocation.parse(VANILLA_PLAINS_STREETS_POOL),
                 "villagedungeons:village/plains/streets/plains_large_tavern_street", 5);
 
         //addBuildingToPool(templatePoolRegistry, processorListRegistry,

@@ -53,7 +53,11 @@ public class PreventDuplicateVillageDungeonMixin {
                                                     Optional<? extends Holder<StructureTemplatePool>> $$21, Holder<StructureTemplatePool> $$22, Holder<StructureTemplatePool> $$23, boolean $$24, MutableObject<VoxelShape> $$26,
                                                     List<StructurePoolElement> list) {
 
-        // see if it is a village template, and skip if not.
+        /*
+         * see if it is a village template, and skip if not.
+         * NOTE this also filters out custom dungeon pools, so an additional
+         * check is not required. (we don't want custom dungeon pools to be altered.)
+         */
         if (startingPiece.getElement() instanceof SinglePoolElement) {
             if (((ModSinglePoolElementMixin) startingPiece.getElement()).getTemplate().left().map(t -> t.getPath().toLowerCase().contains("village")).orElse(false)) {
                 List<StructurePoolElement> distinctModTemplates = list.stream()
@@ -94,6 +98,7 @@ public class PreventDuplicateVillageDungeonMixin {
                         VillageRegistry.register(startingPiece.getPosition(), info);
 
                         // TODO need to save the dungeon bounding box - probably on return from tryPlacingChildren() method
+                        // TODO won't be here anymore, as this is only the custom street template (-> tavern & ladder)
                     }
                 }
             }
