@@ -1,6 +1,0 @@
-{
-  "parent": "villagedungeons:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/weathered_copper_door"
-  }
-}

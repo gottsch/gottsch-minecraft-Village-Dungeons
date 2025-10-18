@@ -2,6 +2,8 @@ package mod.gottsch.forge.villagedungeons.core.block;
 
 import mod.gottsch.forge.villagedungeons.core.setup.Registration;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -10,63 +12,22 @@ import net.minecraftforge.registries.RegistryObject;
  */
 public class ModBlocks {
 
-    // copper blocks
-//    public static final RegistryObject<Block> COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "copper_grate", () ->
-//                            new WeatheringCopperGrateBlock(WeatheringCopper.WeatherState.UNAFFECTED, BlockBehaviour.Properties.of()
-//                                    .strength(3.0F, 6.0F)
-//                                    .sound(SoundType.COPPER)
-//                                    .mapColor(MapColor.WARPED_STEM)
-//                                    .noOcclusion()
-//                                    .requiresCorrectToolForDrops()
-//                                    .isValidSpawn((a,b, c, d) -> false)
-//                                    .isRedstoneConductor((a, b, c) ->false)
-//                                    .isSuffocating((a, b, c) ->false)
-//                                    .isViewBlocking((a, b, c) -> false)));
-//
-//    public static final RegistryObject<Block> EXPOSED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "exposed_copper_grate", () -> new WeatheringCopperGrateBlock(WeatheringCopper.WeatherState.EXPOSED,
-//                            BlockBehaviour.Properties.copy(COPPER_GRATE.get())
-//                                    .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
-//
-//    public static final RegistryObject<Block> WEATHERED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//            "weathered_copper_grate", () ->
-//                            new WeatheringCopperGrateBlock(WeatheringCopper.WeatherState.WEATHERED,
-//                                    BlockBehaviour.Properties.copy(COPPER_GRATE.get())
-//                                            .mapColor(MapColor.COLOR_ORANGE)));
-//
-//    public static final RegistryObject<Block> OXIDIZED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "oxidized_copper_grate", () -> new WeatheringCopperGrateBlock(WeatheringCopper.WeatherState.OXIDIZED,
-//                            BlockBehaviour.Properties.copy(COPPER_GRATE.get())
-//                                    .mapColor(MapColor.WARPED_NYLIUM)));
-//
-//
-//    public static final RegistryObject<Block> WEATHERED_COPPER_TRAPDOOR = Registration.BLOCKS.register(
-//            "weathered_copper_trapdoor",() ->
-//            new WeatheringCopperTrapDoorBlock(
-//                    BlockSetType.OAK, WeatheringCopper.WeatherState.WEATHERED, BlockBehaviour.Properties.copy(WEATHERED_COPPER_GRATE.get()))
-//    );
-//
-//
-//    public static final RegistryObject<Block> WAXED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "waxed_copper_grate", () -> new Block(BlockBehaviour.Properties.copy(COPPER_GRATE.get())));
-//
-//    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "waxed_exposed_copper_grate", () -> new Block(BlockBehaviour.Properties.copy(EXPOSED_COPPER_GRATE.get())));
-//
-//    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "waxed_weathered_copper_grate", () -> new Block(BlockBehaviour.Properties.copy(WEATHERED_COPPER_GRATE.get())));
-//
-//    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_GRATE =
-//            Registration.BLOCKS.register(
-//                    "waxed_oxidized_copper_grate", () -> new Block(BlockBehaviour.Properties.copy(COPPER_GRATE.get())));
+    // TODO MOVE to GottschCore
+    public static final RegistryObject<Block> STRUCTURE_NEIGHBOR_DEPENDENT_STATE_MARKER = Registration.BLOCKS.register("structure_neighbor_dependent_state_marker", () -> new StructureNeighborDependentStateMarkerBlock(Block.Properties.of().replaceable().noCollission().noLootTable().air()));
+
+    // air blocks
+    public static final RegistryObject<Block> SEWER_AIR = Registration.BLOCKS.register("sewer_air",
+            () -> new SewerAir(BlockBehaviour.Properties.of().mapColor(MapColor.DIRT)
+                    .air() // Can start with air properties or build custom
+                    .noOcclusion() // Allows light/visibility through the block
+                    .isViewBlocking((state, level, pos) -> false) // Important for view
+                    .isValidSpawn((state, level, pos, entityType) -> false) // Prevent mobs from spawning
+                    .noCollission() // Makes it non-solid like air
+//                    .instabreak() // Can be instantly broken in creative
+                    .replaceable() // Can be placed over without breaking
+                    .noLootTable()
+                    // Other properties like sound type, resistance, etc.
+            ));
 
     public static void register(IEventBus bus) {
         Registration.BLOCKS.register(bus);

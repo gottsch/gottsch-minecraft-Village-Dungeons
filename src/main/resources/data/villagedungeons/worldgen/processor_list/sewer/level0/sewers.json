@@ -1,0 +1,866 @@
+{
+  "processors": [
+    {
+      "processor_type": "villagedungeons:dynamic_state_aged_processor",
+      "agings": 3,
+      "rules": [
+        {
+          "block": "minecraft:brick_stairs",
+          "output_blocks": [
+            {
+              "block": "dungeonblocks:mossy_brick_stairs",
+              "probability": 0.3
+            },
+            {
+              "block": "dungeonblocks:cobblestone_brick",
+              "probability": 0.1
+            },
+            {
+              "block": "minecraft:dirt",
+              "probability": 0.1
+            }
+          ]
+        },
+        {
+          "block": "minecraft:stone_brick_stairs",
+          "output_blocks": [
+            {
+              "block": "minecraft:mossy_stone_brick_stairs",
+              "probability": 0.3
+            },
+            {
+              "block": "minecraft:mossy_cobblestone_stairs",
+              "probability": 0.3
+            },
+            {
+              "block": "minecraft:dirt",
+              "probability": 0.1
+            }
+          ]
+        },
+        {
+          "block": "minecraft:stone_brick_stairs",
+          "output_blocks": [
+            {
+              "block": "minecraft:cobblestone_stairs",
+              "probability": 0.2
+            },
+            {
+              "block": "minecraft:andesite_brick_stairs",
+              "probability": 0.2
+            },
+            {
+              "block": "minecraft:dirt",
+              "probability": 0.1
+            }
+          ]
+        },
+        {
+          "block": "minecraft:cobblestone_stairs",
+          "output_blocks": [
+            {
+              "block": "minecraft:andesite_stairs",
+              "probability": 0.3
+            },
+            {
+              "block": "minecraft:gravel",
+              "probability": 0.1
+            },
+            {
+              "block": "minecraft:dirt",
+              "probability": 0.1
+            }
+          ]
+        },
+        {
+          "block": "minecraft:polished_andesite_stairs",
+          "output_blocks": [
+            {
+              "block": "minecraft:andesite_stairs",
+              "probability": 0.3
+            },
+            {
+              "block": "minecraft:gravel",
+              "probability": 0.1
+            },
+            {
+              "block": "minecraft:dirt",
+              "probability": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:square_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_square_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:square_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:left_large_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_left_large_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:left_large_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:right_large_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_right_large_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:right_large_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:large_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:large_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_large_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cracked_stone_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:stone_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_stone_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:square_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_square_stone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:square_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:left_large_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_left_large_stone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:left_large_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:right_large_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_right_large_stone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:right_large_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:polished_andesite",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:andesite"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:polished_andesite_corbel",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:andesite_corbel"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:polished_granite_corbel",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:granite_corbel"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:polished_andesite_barred_window",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:andesite_barred_window"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:polished_andesite_barred_window_facade",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:andesite_barred_window_facade"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:waxed_weathered_copper_heavy_grate",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:waxed_oxidized_copper_heavy_grate"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:waxed_weathered_copper_grate",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:waxed_oxidized_copper_grate"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:waxed_weathered_copper_trapdoor",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:waxed_oxidized_copper_trapdoor"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:cobblestone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_cobblestone_brick"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "minecraft:bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+
+        {
+          "input_predicate": {
+            "block": "minecraft:cracked_stone_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:mossy_stone_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.2
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_cobblestone"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_square_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_left_large_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_right_large_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_cobblestone_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_large_bricks",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:mossy_bricks"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_square_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_left_large_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_cobblestone"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_right_large_stone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.3
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:mossy_cobblestone"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:cobblestone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:gravel_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:cobblestone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_cobblestone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "dungeonblocks:gravel_brick"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:mossy_cobblestone_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:cobblestone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:gravel"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:cobblestone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:cobblestone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:mossy_cobblestone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:gravel"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:mossy_cobblestone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:mossy_cobblestone",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:andesite",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:gravel"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:andesite",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:dirt"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:andesite",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "minecraft:rule",
+      "rules": [
+
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:andesite_corbel",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:granite_corbel",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:andesite_barred_window",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:andesite_barred_window_facade",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.1
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:dirt",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "dungeonblocks:gravel_brick",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        },
+        {
+          "input_predicate": {
+            "block": "minecraft:gravel",
+            "predicate_type": "minecraft:random_block_match",
+            "probability": 0.05
+          },
+          "location_predicate": {
+            "predicate_type": "minecraft:always_true"
+          },
+          "output_state": {
+            "Name": "minecraft:air"
+          }
+        }
+      ]
+    },
+    {
+      "processor_type": "villagedungeons:sewer_deco_processor"
+    }
+  ]
+}

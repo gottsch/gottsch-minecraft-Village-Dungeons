@@ -30,9 +30,15 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModStructureProcessors {
     public static final DeferredRegister<StructureProcessorType<?>> STRUCTURE_PROCESSORS = DeferredRegister.create(Registries.STRUCTURE_PROCESSOR, VillageDungeons.MOD_ID);
 
-    public static final RegistryObject<StructureProcessorType<SewerGeneratorBlockProcessor>> SEWER_GENERATOR_PROCESSOR = STRUCTURE_PROCESSORS.register(
-            "sewer_generator_processor", () -> () -> SewerGeneratorBlockProcessor.CODEC
-    );
+    public static final RegistryObject<StructureProcessorType<DynamicStateAgedProcessor>> AGED_PROCESSOR =
+            STRUCTURE_PROCESSORS.register("dynamic_state_aged_processor", () -> () -> DynamicStateAgedProcessor.CODEC);
+
+    public static final RegistryObject<StructureProcessorType<SewerDecoProcessor>> SEWER_DECO_PROCESSOR =
+            STRUCTURE_PROCESSORS.register("sewer_deco_processor", () -> () -> SewerDecoProcessor.CODEC);
+
+//    public static final RegistryObject<StructureProcessorType<SewerGeneratorBlockProcessor>> SEWER_GENERATOR_PROCESSOR = STRUCTURE_PROCESSORS.register(
+//            "sewer_generator_processor", () -> () -> SewerGeneratorBlockProcessor.CODEC
+//    );
 
     public static void register(IEventBus eventBus) {
         STRUCTURE_PROCESSORS.register(eventBus);

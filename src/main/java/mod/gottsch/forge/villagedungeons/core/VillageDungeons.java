@@ -18,11 +18,15 @@
 package mod.gottsch.forge.villagedungeons.core;
 
 import mod.gottsch.forge.villagedungeons.core.block.ModBlocks;
+import mod.gottsch.forge.villagedungeons.core.block.entity.ModBlockEntities;
 import mod.gottsch.forge.villagedungeons.core.config.Config;
 import mod.gottsch.forge.villagedungeons.core.item.ModItems;
-import mod.gottsch.forge.villagedungeons.core.setup.CommonSetup;
+import mod.gottsch.forge.villagedungeons.core.setup.ClientSetup;
 import mod.gottsch.forge.villagedungeons.core.setup.Registration;
+import mod.gottsch.forge.villagedungeons.core.world.levelgen.structure.ModStructures;
 import mod.gottsch.forge.villagedungeons.core.world.levelgen.structure.templatesystem.ModStructureProcessors;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -45,8 +49,16 @@ public class VillageDungeons {
         Registration.init(); // TODO ModEntities?
         ModBlocks.register(context.getModEventBus());
         ModItems.register(context.getModEventBus());
-
+        ModBlockEntities.register(context.getModEventBus());
+        ModStructures.register(context.getModEventBus());
         ModStructureProcessors.register(context.getModEventBus());
+
+        // client setup
+        // register 'ClientSetup::init' to be called at mod setup time (client only)
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> context.getModEventBus().addListener(ClientSetup::init));
+//        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+//
+//        modEventBus.addListener(ClientSetup::init);
     }
 
 }

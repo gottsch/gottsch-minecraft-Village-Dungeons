@@ -1,0 +1,34 @@
+{
+  "comment": "this pool should include tunnels, corners, junctions, and adapters, etc.",
+  "name": "villagedungeons:sewer/level0/tunnels",
+  "fallback": "villagedungeons:sewer/level0/tunnel_terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/tunnel_1",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/tunnel_2",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/tunnel_3",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    }
+  ]
+}

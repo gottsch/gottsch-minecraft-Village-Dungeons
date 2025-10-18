@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "villagedungeons:block/oxidized_copper_grate"
-  },
-  "render_type": "cutout"
-}

@@ -4,9 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "villagedungeons.refmap.json",
   "mixins": [
-    "ModJigsawPlacementMixin",
-    "PreventDuplicateVillageDungeonMixin",
-    "ModSinglePoolElementMixin"
+
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,0 +1,61 @@
+{
+  "comment": "this pool should include tunnels, junctions, and adapters, etc.",
+  "name": "villagedungeons:sewer/level0/all_tunnels",
+  "fallback": "villagedungeons:sewer/level0/large_tunnel_terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/large/large_tunnel_1",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/large/large_tunnel_2",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/medium/medium_tunnel_1",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/medium/medium_tunnel_2",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/tunnel_1",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/tunnel_2",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 3
+    }
+  ]
+}

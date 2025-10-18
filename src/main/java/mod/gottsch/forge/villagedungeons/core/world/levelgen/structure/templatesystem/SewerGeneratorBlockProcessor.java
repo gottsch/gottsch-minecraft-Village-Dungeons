@@ -29,11 +29,13 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemp
 /**
  . * @author by Mark Gottschling on 3/29/2025
  */
+@Deprecated
 public class SewerGeneratorBlockProcessor extends StructureProcessor {
     public static final Codec<SewerGeneratorBlockProcessor> CODEC = Codec.unit(SewerGeneratorBlockProcessor::new);
 
     public SewerGeneratorBlockProcessor() {
     }
+
 
     @Override
     public StructureTemplate.StructureBlockInfo processBlock(LevelReader levelReader, BlockPos pos, BlockPos relativePos, StructureTemplate.StructureBlockInfo original, StructureTemplate.StructureBlockInfo current, StructurePlaceSettings placementSettings) {
@@ -55,6 +57,7 @@ public class SewerGeneratorBlockProcessor extends StructureProcessor {
 
     @Override
     protected StructureProcessorType<?> getType() {
-        return ModStructureProcessors.SEWER_GENERATOR_PROCESSOR.get();
+//        return ModStructureProcessors.SEWER_GENERATOR_PROCESSOR.get();
+ return null;
     }
 }

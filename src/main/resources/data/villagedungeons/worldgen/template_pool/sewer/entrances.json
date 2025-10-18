@@ -1,0 +1,25 @@
+{
+  "comment": "need a different terminator as this is a up/down connection",
+  "name": "villagedungeons:sewer/entrances",
+  "fallback": "villagedungeons:sewer/entrance_terminators",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/entrance_room_2",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/entrance_ladder_1",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}

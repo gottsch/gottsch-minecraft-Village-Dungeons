@@ -30,7 +30,7 @@ import java.util.Optional;
 public class ModJigsawPlacementMixin {
     // TODO this will have to be a list of a regex matcher
     @Unique
-    private static final ResourceLocation village_Dungeons_1_20_1$plainsLargeTavern1 = ResourceLocation.fromNamespaceAndPath(VillageDungeons.MOD_ID, "village/plains_large_tavern_1_with_cellar");
+    private static final ResourceLocation village_Dungeons_1_20_1$plainsLargeTavern1 = new ResourceLocation(VillageDungeons.MOD_ID, "village/plains_large_tavern_1_with_cellar");
 
     @Inject(
             method = "addPieces(Lnet/minecraft/world/level/levelgen/structure/Structure$GenerationContext;Lnet/minecraft/core/Holder;Ljava/util/Optional;ILnet/minecraft/core/BlockPos;ZLjava/util/Optional;I)Ljava/util/Optional;",

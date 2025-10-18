@@ -1,0 +1,24 @@
+{
+  "name": "villagedungeons:sewer/level0/tunnel_terminators",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/terminator/tunnel_terminator_1",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "villagedungeons:sewer/level0/tunnel/terminator/tunnel_terminator_2",
+        "processors": "villagedungeons:sewer/level0/sewers",
+        "projection": "rigid"
+      },
+      "weight": 1
+    }
+  ]
+}
